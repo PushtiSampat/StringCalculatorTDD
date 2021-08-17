@@ -49,4 +49,40 @@ public class CalculatorTest {
 			assertEquals("Negative are not allowed:-1,-3,-4",e.getMessage());
 		}
 	}
+	
+	@Test
+	public void BiggerThanThousand() {
+		assertEquals(3,s.add("1,1001,2"));
+	}
+	
+	@Test
+	public void DelimeterAnyLength() {
+		assertEquals(6,s.add("//[***]\n1***2***3"));
+	}
+	
+	@Test
+	public void MultipleDelimeter() {
+		assertEquals(11,s.add("//[%&^*]\n1%3^3%4"));
+	}
+	
+	@Test
+	public void MultipleDelimeterSqrBracket() {
+		//assertEquals(11,s.add("//[%][&][^][*]\n1%*3^*3&&%4"));
+		assertEquals(6,s.add("//[*][%]\n1*2%3"));
+	}
+	
+	@Test
+	public void LengthLongerThanOneChar() {
+		assertEquals(11,s.add("//[%&^*]\n1%*3^*3&&%4"));
+	}
+	
+	@Test
+	public void LengthLongerThanOneCharMultiple() {
+		assertEquals(11,s.add("//[%&@*#][*$]\n1%&@*#3*$3%&@*#4"));
+	}
+	
+	@Test
+	public void LengthLongerThanOneCharMultipleSimple() {
+		assertEquals(12,s.add("//[^^^^][@@@]\n1^^^^3@@@3@@@4^^^1"));
+	}
 }
