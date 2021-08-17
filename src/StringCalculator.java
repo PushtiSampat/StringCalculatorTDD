@@ -10,7 +10,7 @@ public class StringCalculator {
 				matchString.matches();
 				String userDelimeter=matchString.group(1);
 				String deliNumber=matchString.group(2);
-				String onlyNumber[]=deliNumber.split(userDelimeter);	
+				String onlyNumber[]=deliNumber.split(Pattern.quote(userDelimeter));		
 				for(int i=0;i<onlyNumber.length;i++) {
 					num=Integer.parseInt(onlyNumber[i]);
 					sum=sum+num;

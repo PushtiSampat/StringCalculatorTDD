@@ -33,4 +33,9 @@ public class CalculatorTest {
 	public void ChangeDelimeter() {
 		assertEquals(3,s.add("//;\n1;2"));
 	}
+	
+	@Test
+	public void ChangeAsRegexDelimeter() {
+		assertEquals(3,s.add("//.\n1.2"));
+	}
 }
