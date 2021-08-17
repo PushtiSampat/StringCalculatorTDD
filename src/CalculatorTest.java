@@ -28,4 +28,9 @@ public class CalculatorTest {
 	public void NewLineNumbers() {
 		assertEquals(6,s.add("1\n2,3"));
 	}
+	
+	@Test
+	public void ChangeDelimeter() {
+		assertEquals(3,s.add("//;\n1;2"));
+	}
 }
