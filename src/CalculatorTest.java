@@ -67,7 +67,6 @@ public class CalculatorTest {
 	
 	@Test
 	public void MultipleDelimeterSqrBracket() {
-		//assertEquals(11,s.add("//[%][&][^][*]\n1%*3^*3&&%4"));
 		assertEquals(6,s.add("//[*][%]\n1*2%3"));
 	}
 	
@@ -77,12 +76,12 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void LengthLongerThanOneCharMultiple() {
+	public void LengthLongerThanOneDifferentChars() {
 		assertEquals(11,s.add("//[%&@*#][*$]\n1%&@*#3*$3%&@*#4"));
 	}
 	
 	@Test
-	public void LengthLongerThanOneCharMultipleSimple() {
+	public void LengthLongerThanOneSingleRepeatChar() {
 		assertEquals(12,s.add("//[^^^^][@@@]\n1^^^^3@@@3@@@4^^^1"));
 	}
 }
