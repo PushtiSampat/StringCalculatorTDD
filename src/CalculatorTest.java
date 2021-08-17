@@ -38,4 +38,15 @@ public class CalculatorTest {
 	public void ChangeAsRegexDelimeter() {
 		assertEquals(3,s.add("//.\n1.2"));
 	}
+	
+
+	@Test
+	public void NegativeNotAllowed() {
+		try {
+			s.add("1,-1,2,-3,-4");
+		}
+		catch(RuntimeException e) {
+			assertEquals("Negative are not allowed:-1,-3,-4",e.getMessage());
+		}
+	}
 }

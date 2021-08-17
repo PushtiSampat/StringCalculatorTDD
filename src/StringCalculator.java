@@ -17,6 +17,19 @@ public class StringCalculator {
 				}
 				return sum;
 			}
+			else if(input.contains("-") && input.contains(",")) {
+				String[] digit=input.split(",");
+				StringBuffer s=new StringBuffer();
+				for(int i=0;i<digit.length;i++) {
+					int num=Integer.parseInt(digit[i]);
+					if(num<0) {
+						s.append(digit[i]);
+						s.append(",");
+					}
+				}
+				s.deleteCharAt(s.length()-1);
+				throw new RuntimeException("Negative are not allowed:" +s);
+			}
 			else if(input.contains(",") || input.contains("\n")) {
 				int sum=0;
 				String[] digit=input.split(",|\n");
